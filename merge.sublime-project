@@ -4,5 +4,13 @@
 		{
 			"path": "."
 		}
-	]
+	],
+  "build_systems": [
+    {
+      "name": "Merge",
+      "cmd": ["python", "-u", "frame.py"],
+      "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+      "selector": "source.python"
+    }
+  ]
 }
