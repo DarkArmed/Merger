@@ -52,7 +52,11 @@ class Merger:
                     for base in match:
                         self._pool[base] -= merge_num
         # print 'merged k:', k, merged
-        merged.update(self.merge(k - 1))
+        for code, num in self.merge(k - 1).items():
+            if code in merged.keys():
+                merged[code] += num
+            else:
+                merged[code] = num
         return merged
 
     def merge_result(self, k):
